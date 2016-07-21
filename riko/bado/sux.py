@@ -112,8 +112,7 @@ class XMLParser(Protocol):
         if stateTable is None:
             prefixes = ('begin_', 'do_', 'end_')
             fndicts = (get_method_obj_dict(self, p) for p in prefixes)
-            stateTable = dict(zipfndict(*fndicts))
-            self.__class__.__stateTable = stateTable
+            self.__class__.__stateTable = dict(zipfndict(*fndicts))
 
         return stateTable
 
