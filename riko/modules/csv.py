@@ -32,7 +32,7 @@ from . import processor
 from riko.lib import utils
 from riko.bado import coroutine, return_value, io
 
-OPTS = {'ftype': 'none'}
+OPTS = {'ftype': 'none', 'fclose': True}
 DEFAULTS = {
     'delimiter': ',', 'quotechar': '"', 'encoding': 'utf-8', 'skip_rows': 0,
     'sanitize': True, 'dedupe': True, 'col_names': None, 'has_header': True}
@@ -125,7 +125,7 @@ def parser(_, objconf, skip, **kwargs):
         rkwargs['encoding'] = encoding
         stream = read_csv(response, **rkwargs)
 
-    return stream, skip
+    return stream, response
 
 
 @processor(DEFAULTS, isasync=True, **OPTS)

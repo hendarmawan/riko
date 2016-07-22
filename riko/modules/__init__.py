@@ -336,6 +336,11 @@ class processor(object):
 
             one, assignment = get_assignment(stream, skip, **combined)
 
+            if hasattr(skip, 'close'):
+                f, skip = skip, None
+            else:
+                f = None
+
             if skip or combined.get('emit'):
                 stream = assignment
             elif not skip:
