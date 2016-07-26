@@ -63,11 +63,13 @@ def pipme():
     exit(call('pip', 'install', '-r', 'requirements.txt'))
 
 
+@manager.arg('where', 'w', help='requirements file', default=None)
 @manager.command
-def require():
+def require(where=None):
     """Create requirements.txt"""
-    cmd = 'pip freeze -l | grep -vxFf dev-requirements.txt > requirements.txt'
-    exit(call(cmd, shell=True))
+    prefix = '%s-' % where if where else ''
+    cmd = 'pip freeze -l | grep -xFf %srequirements.txt' % prefix
+    exit(check_call(cmd, shell=True))
 
 
 @manager.arg('where', 'w', help='test path', default=None)
