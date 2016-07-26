@@ -62,8 +62,6 @@ riko's available pipes are outlined below [#]_:
 +-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
 | strconcat         | processor | transformer   | concatenates strings                                                                         |
 +-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
-| stringtokenizer   | processor | transformer   | splits a string by a delimiter                                                               |
-+-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
 | strreplace        | processor | transformer   | replaces the text of a field of a feed item                                                  |
 +-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
 | strtransform      | processor | transformer   | performs string transformations on the field of a feed item                                  |
@@ -73,6 +71,8 @@ riko's available pipes are outlined below [#]_:
 | substr            | processor | transformer   | returns a substring of a field of a feed item                                                |
 +-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
 | tail              | operator  | composer      | truncates a feed to the last N items                                                         |
++-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
+| tokenizer         | processor | transformer   | splits a string by a delimiter                                                               |
 +-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
 | truncate          | operator  | composer      | returns a specified number of items from a feed                                              |
 +-------------------+-----------+---------------+----------------------------------------------------------------------------------------------+
