@@ -24,6 +24,7 @@ logger = gogo.Gogo(__name__, monolog=True).logger
 __sources__ = [
     'csv',
     'feedautodiscovery',
+    # 'feedsearch',
     'fetch',
     'fetchdata',
     'fetchpage',
